@@ -8,18 +8,25 @@ import org.springframework.stereotype.Service;
 @SuppressWarnings("serial")
 @Service
 public class LoginService {
-    
-    private static final Map<String, String> VALID_USERS = new Hashtable<String, String>() {{
-        put("support", "admin");
-        put("finance", "admin");
-        put("sales", "admin");
-        put("hr", "admin");
-        put("technology", "admin");
-     }};
+
+    private static final Map<String, String> VALID_USERS = new Hashtable<String, String>() {
+        {
+            put("support", "admin");
+            put("finance", "admin");
+            put("sales", "admin");
+            put("hr", "admin");
+            put("technology", "admin");
+        }
+    };
 
     public boolean validateLogin(String user, String password) {
+        System.out.println("Login Validation");
+        System.out.println(user);
+        System.out.println(password);
+        if (user == null || password == null)
+            return false;
         if (VALID_USERS.containsKey(user)) {
-            return VALID_USERS.get(user) == password;
+            return VALID_USERS.get(user).equals(password);
         }
         return false;
     }

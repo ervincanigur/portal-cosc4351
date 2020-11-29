@@ -1,19 +1,19 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>Admin Portal</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-</head>
-<body>
+  </head>
+  <body style="align-content: center;">
     <div class="redText">
-        <p th:text="${errorMessage}"/>
+      <p th:text="${errorMessage}" />
     </div>
     <div>
-        <form method="POST">
-            Name : <input type="text" name="username"/>
-            Password : <input type="text" name="password"/>
-            <input type="submit">
-        </form>
+      <form method="POST" modelAttribute="userLogin" action="login">
+        Name: <input type="text" name="username" />
+        Password: <input type="password" name="password" />
+        <input type="submit" />
+      </form>
     </div>
-</body>
+  </body>
 </html>

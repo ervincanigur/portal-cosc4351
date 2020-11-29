@@ -20,9 +20,6 @@ public class LoginService {
     };
 
     public boolean validateLogin(String user, String password) {
-        System.out.println("Login Validation");
-        System.out.println(user);
-        System.out.println(password);
         if (user == null || password == null)
             return false;
         if (VALID_USERS.containsKey(user)) {

@@ -17,13 +17,13 @@ public class LoginController {
 
     @GetMapping("/login")
     public String loginPage(Model model) {
+        model.addAttribute("errorMessage", "");
         return "login";
     }
 
     @PostMapping("/login")
     public String welcomePage(@RequestParam(name = "username", required = true) String username,
             @RequestParam(name = "password", required = true) String password, Model model) {
-        System.out.println(username);
         if (service.validateLogin(username, password)) {
             return "redirect:/welcome?username=" + username;
         } else {

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Admin Portal</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="redText">
+        <p th:text="${errorMessage}"/>
+    </div>
+    <div>
+        <form method="POST">
+            Name : <input type="text" name="username"/>
+            Password : <input type="text" name="password"/>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+</html>
